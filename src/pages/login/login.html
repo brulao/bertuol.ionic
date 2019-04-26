@@ -1,0 +1,32 @@
+<ion-content padding>
+
+  <div class="log" align="center">
+    <img src="../../assets/imgs/bertuol_diesel.png">
+  </div>
+
+  <ion-list no-lines>
+    <ion-item>
+      <ion-input [(ngModel)]="form.email" type="text" placeholder="E-mail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="form.senha" type="password" placeholder="Senha"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid>
+    <ion-row>
+      <button ion-button block round (click)="login()">Login</button>
+    </ion-row>
+    <ion-row>
+      <button ion-button round block (click)="cadastrar()">
+        Cadastrar-se
+      </button>
+    </ion-row>
+    <ion-row>
+      <button ion-button clear block>
+        Administrar Cadastros
+      </button>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

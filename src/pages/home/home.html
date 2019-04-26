@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Bertuol Fertilizantes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ 
+<h4>Bem vindo {{ nomeUsuario.nome }} </h4>
+
+<button ion-button block (click)="viagens()">Viagens</button>
+
+<button ion-button block clear (click)="sair()">Sair</button>
+
+</ion-content>
