@@ -12,11 +12,10 @@ export class HomePage {
   nomeUsuario = JSON.parse(localStorage.getItem('bertuol.user'));
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams
-    ) 
-  {
-    if (UsuarioProvider.IsLogado){
+  ) {
+    if (UsuarioProvider.IsLogado) {
       console.log(this.nomeUsuario.nome);
     } else {
       this.nomeUsuario = 'Faça o login';
@@ -24,13 +23,36 @@ export class HomePage {
     }
   }
 
+  // Viagens
+  cadastrar() {
+    this.navCtrl.push('AdminViagemPage');
+  }
+
   viagens() {
-     this.navCtrl.setRoot('ViagemPage');
+    this.navCtrl.push('ViagemPage');
+  }
+
+  // Motoristas
+  cadastrarMotorista() {
+    this.navCtrl.push('CadastroMotoristaPage');
+  }
+
+  listarMotorista() {
+    this.navCtrl.push('MotoristaPage');
+  }
+
+  // Caminhões
+  cadastrarCaminhao() {
+    this.navCtrl.push('CadastroCaminhaoPage');
+  }
+
+  listarCaminhao() {
+    this.navCtrl.push('CaminhaoPage');
   }
 
   sair() {
     this.navCtrl.setRoot('LoginPage');
     return localStorage.clear();
-   }
+  }
 
 }

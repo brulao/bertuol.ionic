@@ -7,8 +7,8 @@ export class AlertProvider {
   constructor(
     private alertCtrl: AlertController,
     private toastCtrl: ToastController
-    ) {
-    console.log('Hello AlertProvider Provider');
+  ) {
+
   }
 
   toast(title: string, position: string): void {
@@ -29,8 +29,8 @@ export class AlertProvider {
       title: title,
       message: message,
       buttons: [
-        { text: "Não", role: 'Cancel', handler: () => { console.log('Confirm:Say:No'); }},
-        { text: "Sim", handler: () => { callback(); }}
+        { text: "Não", role: 'Cancel', handler: () => { console.log('Confirm:Say:No'); } },
+        { text: "Sim", handler: () => { callback(); } }
       ],
       enableBackdropDismiss: false
     }).present();

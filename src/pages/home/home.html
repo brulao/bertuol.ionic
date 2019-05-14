@@ -8,11 +8,46 @@
 </ion-header>
 
 <ion-content padding>
- 
-<h4>Bem vindo {{ nomeUsuario.nome }} </h4>
+  <ion-card>
+    <ion-card-header>
+      Bem vindo {{ nomeUsuario.nome }}
+    </ion-card-header>
+    <ion-card-content>
+      <p>Esse é o aplicativo para controle de viagens da Bertuol Fertilizantes, seu propósito é registrar dados das
+        viagens dos motoristas que trabalham para a empresa e premiar aqueles que economizam combustível.</p>
+    </ion-card-content>
+  </ion-card>
 
-<button ion-button block (click)="viagens()">Viagens</button>
+  <ion-card>
+    <ion-card-header>
+      Controle de Viagens
+    </ion-card-header>
+    <ion-card-content>
+      <button ion-button round block (click)="cadastrar()" text-wrap>Nova</button>
+      <button ion-button round block (click)="viagens()" text-wrap>Listar</button>
+    </ion-card-content>
+  </ion-card>
 
-<button ion-button block clear (click)="sair()">Sair</button>
+  <ion-card>
+      <ion-card-header>
+        Controle de Motoristas
+      </ion-card-header>
+      <ion-card-content>
+        <button ion-button round block (click)="cadastrarMotorista()" text-wrap>Novo</button>
+        <button ion-button round block (click)="listarMotorista()" text-wrap>Listar</button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+          Controle de Caminhões
+        </ion-card-header>
+        <ion-card-content>
+          <button ion-button round block (click)="cadastrarCaminhao()" text-wrap>Novo</button>
+          <button ion-button round block (click)="listarCaminhao()" text-wrap>Listar</button>
+        </ion-card-content>
+      </ion-card>
+
+  <button ion-button round block clear (click)="sair()">Sair</button>
 
 </ion-content>

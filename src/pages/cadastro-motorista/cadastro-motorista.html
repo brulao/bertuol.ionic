@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Motorista</ion-title>
+    <ion-buttons right>
+      <button ion-button clear (click)="salvar()" >
+        Salvar
+      </button>
+      <button *ngIf="motorista._id" ion-button icon-only (click)="excluir()" >
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+    <!-- Nome do motorista -->
+    <ion-item>
+      <ion-label floating>Nome do motorista</ion-label>
+      <ion-input type="text" [(ngModel)]="motorista.nome"></ion-input>
+    </ion-item>
+
+    <!-- e-mail do motorista -->
+    <ion-item>
+      <ion-label floating>E-mail do motorista</ion-label>
+      <ion-input type="text" [(ngModel)]="motorista.email"></ion-input>
+    </ion-item>
+
+    <!-- Primeiro telefone -->
+    <ion-item>
+      <ion-label floating>Primeiro Telefone</ion-label>
+      <ion-input type="text" [(ngModel)]="motorista.telefoneUm"></ion-input>
+    </ion-item>
+
+    <!-- Segundo telefone -->
+    <ion-item>
+      <ion-label floating>Segundo Telefone</ion-label>
+      <ion-input type="text" [(ngModel)]="motorista.telefoneDois"></ion-input>
+    </ion-item>
+
+
+    <!-- Status do Motorista -->
+    <ion-item>
+        <ion-label>Ativo</ion-label>
+        <ion-toggle checked="false" [(ngModel)]="motorista.ativo"></ion-toggle>
+    </ion-item>
+
+    <ion-item></ion-item>
+
+  </ion-list>
+</ion-content>

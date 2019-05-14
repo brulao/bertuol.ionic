@@ -7,7 +7,7 @@ export class SpinnerProvider {
   private spinner: Loading = null;
 
   constructor(public loading: LoadingController) {
-    console.log('Hello SpinnerProvider Provider');
+
   }
 
   Show(message: string): void {

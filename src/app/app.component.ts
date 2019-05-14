@@ -10,18 +10,20 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any =  UsuarioProvider.IsLogado ? 'HomePage' : 'LoginPage' ;
+  rootPage: any = UsuarioProvider.IsLogado ? 'HomePage' : 'LoginPage';
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Login', component: 'LoginPage' },
       { title: 'Home', component: 'HomePage' },
       { title: 'Viagens', component: 'ViagemPage' },
+      { title: 'Motorista', component: 'MotoristaPage' },
+      { title: 'Caminhões', component: 'CaminhaoPage' },
+      { title: 'Sobre', component: 'SobrePage' }
     ];
 
   }

@@ -8,7 +8,7 @@ declare var Connection: any;
 export class NetworkProvider {
 
   constructor(private platform: Platform) {
-    console.log('Hello NetworkProvider Provider');
+
   }
 
   get IsOnLine(): boolean {

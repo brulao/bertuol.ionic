@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Caminhão</ion-title>
+    <ion-buttons right>
+      <button ion-button clear (click)="salvar()" >
+        Salvar
+      </button>
+      <button *ngIf="caminhao._id" ion-button icon-only (click)="excluir()">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+    <!-- Placa do caminhão -->
+    <ion-item>
+      <ion-label floating>Placa do Caminhão</ion-label>
+      <ion-input type="text" [(ngModel)]="caminhao.placa"></ion-input>
+    </ion-item>
+
+    <!-- Modelo do caminhão -->
+    <ion-item>
+      <ion-label floating>Modelo do caminhão:</ion-label>
+      <ion-input type="text" [(ngModel)]="caminhao.modeloCaminhao"></ion-input>
+    </ion-item>
+
+    <!-- Status do caminhão -->
+    <ion-item>
+      <ion-label>Ativo:</ion-label>
+      <ion-toggle checked="false" [(ngModel)]="caminhao.ativo"></ion-toggle>
+    </ion-item>
+
+    <ion-item></ion-item>
+
+  </ion-list>
+</ion-content>

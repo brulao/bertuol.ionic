@@ -15,7 +15,7 @@ export class HttpProvider {
     private alertSrv: AlertProvider,
     private networkSrv: NetworkProvider
   ) {
-    console.log('Hello HttpProvider Provider');
+
   }
 
   public createHeader(header?: HttpHeaders): HttpHeaders {
@@ -56,9 +56,12 @@ export class HttpProvider {
 
   public post(url: string, model: any): Promise<HttpResultModel> {
     this.spinnerSrv.Show("Salvando informações...");
+
+    let header = this.createHeader();
+
     return new Promise((resolve) => {
       if (this.networkSrv.IsOnLine) {
-        this.http.post(url, model)
+        this.http.post(url, model, { headers: header })
           .subscribe(_res => {
             this.spinnerSrv.Hide();
             resolve({ success: true, data: _res, err: undefined });
@@ -89,9 +92,10 @@ export class HttpProvider {
 
   public put(url: string, model: any): Promise<HttpResultModel> {
     this.spinnerSrv.Show("Atualizando informações...");
+    let header = this.createHeader();
     return new Promise((resolve) => {
       if (this.networkSrv.IsOnLine) {
-        this.http.put(url, model)
+        this.http.put(url, model, {headers: header})
           .subscribe(_res => {
             this.spinnerSrv.Hide();
             resolve({ success: true, data: _res, err: undefined });
@@ -122,9 +126,10 @@ export class HttpProvider {
 
   public delete(url: string): Promise<HttpResultModel> {
     this.spinnerSrv.Show("Removendo registro...");
+    let header = this.createHeader();
     return new Promise((resolve) => {
       if (this.networkSrv.IsOnLine) {
-        this.http.delete(url).subscribe(_res => {
+        this.http.delete(url, { headers: header }).subscribe(_res => {
           this.spinnerSrv.Hide();
           resolve({ success: true, data: _res, err: undefined });
         }, err => {

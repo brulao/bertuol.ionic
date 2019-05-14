@@ -34,5 +34,4 @@ export class CadastroPage {
     this.navCtrl.setRoot('LoginPage');
   }
 
-
 }

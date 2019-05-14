@@ -13,6 +13,8 @@ import { NetworkProvider } from '../providers/network/network';
 import { UsuarioProvider } from '../providers/usuario/usuario';
 import { HttpClientModule } from '@angular/common/http';
 import { ViagemProvider } from '../providers/viagem/viagem';
+import { CaminhaoProvider } from '../providers/caminhao/caminhao';
+import { MotoristaProvider } from '../providers/motorista/motorista';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { ViagemProvider } from '../providers/viagem/viagem';
     HttpProvider,
     NetworkProvider,
     UsuarioProvider,
-    ViagemProvider
+    ViagemProvider,
+    CaminhaoProvider,
+    MotoristaProvider
   ]
 })
 export class AppModule { }

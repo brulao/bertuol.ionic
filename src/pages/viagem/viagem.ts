@@ -14,17 +14,16 @@ export class ViagemPage {
   lista: Array<ViagemModel> = new Array<ViagemModel>();
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
     private viagemSrv: ViagemProvider
   ) {
     let token = UsuarioProvider.GetTokenAccess;
-    if(token) {
+    if (token) {
       this._loadData();
     } else {
       this.navCtrl.setRoot('LoginPage');
     }
-
   }
 
   private async _loadData(): Promise<void> {
@@ -35,6 +34,15 @@ export class ViagemPage {
   }
 
   home() {
-    this.navCtrl.setRoot('HomePage');    
+    this.navCtrl.setRoot('HomePage');
   }
+
+  addOrEdit(model?: ViagemModel): void {
+    this.navCtrl.push('AdminViagemPage', { _viagem: model });
+  }
+
+  editarViagem(model?: ViagemModel): void {
+    this.navCtrl.push('EditarViagemPage', { _viagem: model });
+  }
+
 }

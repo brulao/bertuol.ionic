@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Registro de Viagens</ion-title>
+    <ion-title>Cadastro de Motorista</ion-title>
     <ion-buttons right>
       <button ion-button icon-only (click)="addOrEdit({})">
         <ion-icon name="add"></ion-icon>
@@ -14,13 +14,13 @@
 
 <ion-content no-padding>
 
-  <ion-list lines>
-    <ion-item *ngFor="let item of lista" (click)="editarViagem(item)" text-wrap>
-      <ion-label>
-        <ion-icon name="calendar"> </ion-icon>
-        {{ item.dataViagem | date: "dd/MM/yyyy" }} - {{ item.produto}} - Cliente: {{ item.cliente}}
-      </ion-label>
-    </ion-item>
-  </ion-list>
+    <ion-list lines>
+        <ion-item *ngFor="let item of lista" (click)="addOrEdit(item)" text-wrap>
+          <ion-label>
+            <ion-icon name="person"> </ion-icon>
+            {{ item.nome }} 
+          </ion-label>
+        </ion-item>
+      </ion-list>
 
 </ion-content>
