@@ -37,6 +37,16 @@
       </ion-datetime>
     </ion-item>
 
+    <!-- Modelo do caminhão -->
+    <ion-item>
+      <ion-label floating>Modelo do caminhão:</ion-label>
+      <ion-select [(ngModel)]="viagem.caminhao" multiple="true">
+        <ion-option *ngFor="let caminhao of listaC">
+          {{ caminhao.modeloCaminhao }}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
     <!-- Nome do cliente -->
     <ion-item>
       <ion-label floating>Nome do cliente:</ion-label>

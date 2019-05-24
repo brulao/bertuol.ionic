@@ -28,9 +28,11 @@ export class ViagemPage {
 
   private async _loadData(): Promise<void> {
     let viagemResult = await this.viagemSrv.get();
+    let totalViagem = await this.viagemSrv.contador();
     if (viagemResult.success) {
       this.lista = <Array<ViagemModel>>viagemResult.data;
-    }
+      console.log("Número de registros: " +  JSON.stringify(totalViagem.data.total));
+    } 
   }
 
   home() {

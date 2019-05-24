@@ -17,7 +17,7 @@
 
 <ion-content padding>
 
-  <ion-list>
+  <ion-list> 
 
     <!-- Nome do motorista -->
     <ion-item>
@@ -30,6 +30,12 @@
       <ion-label floating>Data da viagem:</ion-label>
       <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY" [(ngModel)]="viagem.dataViagem">
       </ion-datetime>
+    </ion-item>
+
+    <!-- Modelo do caminhão -->
+    <ion-item>
+      <ion-label floating>Modelo do caminhão:</ion-label>
+      <ion-input type="text" [(ngModel)]="viagem.caminhao"></ion-input>
     </ion-item>
 
     <!-- Nome do cliente -->

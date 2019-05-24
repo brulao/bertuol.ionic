@@ -54,6 +54,7 @@ export class HttpProvider {
     });
   }
 
+
   public post(url: string, model: any): Promise<HttpResultModel> {
     this.spinnerSrv.Show("Salvando informações...");
 

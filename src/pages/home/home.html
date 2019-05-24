@@ -23,6 +23,7 @@
       Controle de Viagens
     </ion-card-header>
     <ion-card-content>
+      <p>Número de viagens cadastradas: {{ numeroViagens }}</p>
       <button ion-button round block (click)="cadastrar()" text-wrap>Nova</button>
       <button ion-button round block (click)="viagens()" text-wrap>Listar</button>
     </ion-card-content>
@@ -33,6 +34,7 @@
         Controle de Motoristas
       </ion-card-header>
       <ion-card-content>
+       <p>Número de motoristas cadastrados: {{ numeroMotorista }}</p>
         <button ion-button round block (click)="cadastrarMotorista()" text-wrap>Novo</button>
         <button ion-button round block (click)="listarMotorista()" text-wrap>Listar</button>
       </ion-card-content>
@@ -43,6 +45,7 @@
           Controle de Caminhões
         </ion-card-header>
         <ion-card-content>
+          <p>Número de caminhões cadastrados: {{ numeroCaminhoes }}</p>
           <button ion-button round block (click)="cadastrarCaminhao()" text-wrap>Novo</button>
           <button ion-button round block (click)="listarCaminhao()" text-wrap>Listar</button>
         </ion-card-content>

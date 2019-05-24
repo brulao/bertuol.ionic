@@ -1,7 +1,7 @@
 export class CaminhaoModel {
     _id: string;
     placa: string;
-    modeloCaminho: string;
+    modeloCaminhao: string;
     motorista: string;
     ativo: boolean;
 }

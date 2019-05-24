@@ -15,10 +15,10 @@
 <ion-content no-padding>
 
   <ion-list lines>
-    <ion-item *ngFor="let item of lista" (click)="editarViagem(item)" text-wrap>
+    <ion-item *ngFor="let item of lista" (click)="editarViagem(item)" text-wrap detail>
       <ion-label>
         <ion-icon name="calendar"> </ion-icon>
-        {{ item.dataViagem | date: "dd/MM/yyyy" }} - {{ item.produto}} - Cliente: {{ item.cliente}}
+        {{ item.dataViagem | date: "dd/MM/yyyy" }} - Consumo: {{ item.consumo | number: '1.1-2' }} Km/L <br> Carga: {{ item.produto}} - Cliente: {{ item.cliente}} 
       </ion-label>
     </ion-item>
   </ion-list>

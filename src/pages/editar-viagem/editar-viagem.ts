@@ -7,7 +7,7 @@ import { ViagemModel } from '../../app/models/viagemModel';
 @IonicPage()
 @Component({
   selector: 'page-editar-viagem',
-  templateUrl: 'editar-viagem.html',
+  templateUrl: 'editar-viagem.html', 
 })
 export class EditarViagemPage {
 
@@ -23,9 +23,13 @@ export class EditarViagemPage {
   async salvar(): Promise<void> {
     let sucesso = false;
     if (!this.viagem._id) {
+      this.viagem.kilometragem = this.viagem.kmFinal - this.viagem.kmInicial;
+      this.viagem.consumo = this.viagem.kilometragem / this.viagem.quantidadeLitros;
       let cadastroResult = await this.viagemSrv.post(this.viagem);
       sucesso = cadastroResult.success;
     } else {
+      this.viagem.kilometragem = this.viagem.kmFinal - this.viagem.kmInicial;
+      this.viagem.consumo = this.viagem.kilometragem / this.viagem.quantidadeLitros;
       let updateResult = await this.viagemSrv.put(this.viagem._id, this.viagem);
       sucesso = updateResult.success;
     }

@@ -9,8 +9,12 @@ export abstract class ProviderBase<T> {
 
     get(): Promise<HttpResultModel> {
         return this.http.get(this.url);
-    }       
+    }
 
+    contador(): Promise<HttpResultModel> {
+        return this.http.get(`${this.url}/total`);
+    }
+    
     getByUId(uid: string): Promise<HttpResultModel> {
         return this.http.get(`${this.url}/${uid}`);
     }

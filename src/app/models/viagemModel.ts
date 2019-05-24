@@ -1,6 +1,7 @@
 export class ViagemModel {
     _id: string;
     dataViagem: Date;
+    caminhao: string;
     motorista: string;
     cliente: string;
     destinatario: string;
@@ -9,11 +10,7 @@ export class ViagemModel {
     pesoCarga: number;
     kmInicial: number;
     kmFinal: number;
+    kilometragem: number;
     quantidadeLitros: number;
-    abastecimento: [{
-        dataAbast: string,
-        cidadeAbast: string,
-        litrosAbast: number,
-        precoLitro: number
-    }]
+    consumo: number;
 }
