@@ -16,6 +16,12 @@ import { ViagemProvider } from '../providers/viagem/viagem';
 import { CaminhaoProvider } from '../providers/caminhao/caminhao';
 import { MotoristaProvider } from '../providers/motorista/motorista';
 
+// LOCALE
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import ptBr from '@angular/common/locales/pt';
+registerLocaleData(ptBr)
+
 @NgModule({
   declarations: [
     MyApp
@@ -23,7 +29,7 @@ import { MotoristaProvider } from '../providers/motorista/motorista';
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -40,7 +46,8 @@ import { MotoristaProvider } from '../providers/motorista/motorista';
     UsuarioProvider,
     ViagemProvider,
     CaminhaoProvider,
-    MotoristaProvider
+    MotoristaProvider,
+    { provide: LOCALE_ID, useValue: 'pt-BR' }
   ]
 })
 export class AppModule { }

@@ -11,4 +11,8 @@ export class SobrePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  home(): void {
+    this.navCtrl.setRoot('HomePage');
+  } 
+
 }

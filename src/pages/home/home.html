@@ -14,7 +14,7 @@
     </ion-card-header>
     <ion-card-content>
       <p>Esse é o aplicativo para controle de viagens da Bertuol Fertilizantes, seu propósito é registrar dados das
-        viagens dos motoristas que trabalham para a empresa e premiar aqueles que economizam combustível.</p>
+        viagens dos motoristas que trabalham para a empresa.</p>
     </ion-card-content>
   </ion-card>
 
@@ -29,27 +29,25 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
-      <ion-card-header>
-        Controle de Motoristas
-      </ion-card-header>
-      <ion-card-content>
-       <p>Número de motoristas cadastrados: {{ numeroMotorista }}</p>
-        <button ion-button round block (click)="cadastrarMotorista()" text-wrap>Novo</button>
-        <button ion-button round block (click)="listarMotorista()" text-wrap>Listar</button>
-      </ion-card-content>
-    </ion-card>
+  <ion-card *ngIf="nomeUsuario.administrador">
+    <ion-card-header>
+      Controle de Motoristas
+    </ion-card-header>
+    <ion-card-content>
+      <button ion-button round block (click)="cadastrarMotorista()" text-wrap>Novo</button>
+      <button ion-button round block (click)="listarMotorista()" text-wrap>Listar</button>
+    </ion-card-content>
+  </ion-card>
 
-    <ion-card>
-        <ion-card-header>
-          Controle de Caminhões
-        </ion-card-header>
-        <ion-card-content>
-          <p>Número de caminhões cadastrados: {{ numeroCaminhoes }}</p>
-          <button ion-button round block (click)="cadastrarCaminhao()" text-wrap>Novo</button>
-          <button ion-button round block (click)="listarCaminhao()" text-wrap>Listar</button>
-        </ion-card-content>
-      </ion-card>
+  <ion-card *ngIf="nomeUsuario.administrador">
+    <ion-card-header>
+      Controle de Caminhões
+    </ion-card-header>
+    <ion-card-content>
+      <button ion-button round block (click)="cadastrarCaminhao()" text-wrap>Novo</button>
+      <button ion-button round block (click)="listarCaminhao()" text-wrap>Listar</button>
+    </ion-card-content>
+  </ion-card>
 
   <button ion-button round block clear (click)="sair()">Sair</button>
 

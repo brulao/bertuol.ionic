@@ -10,7 +10,7 @@ import { UsuarioProvider } from '../../providers/usuario/usuario';
   templateUrl: 'caminhao.html',
 })
 export class CaminhaoPage {
-
+  nomeUsuario:'';
   lista: Array<CaminhaoModel> = new Array<CaminhaoModel>();
 
   constructor(
@@ -18,6 +18,7 @@ export class CaminhaoPage {
     public navParams: NavParams,
     private caminhaoSrv: CaminhaoProvider
   ) {
+    this.nomeUsuario = JSON.parse(localStorage.getItem('bertuol.user'));
     let token = UsuarioProvider.GetTokenAccess;
     if (token) {
       this._loadData();
@@ -36,6 +37,11 @@ export class CaminhaoPage {
   addOrEdit(model?: CaminhaoModel): void {
     this.navCtrl.push('CadastroCaminhaoPage', { _caminhao: model });
   }
+
+  home(): void {
+    this.navCtrl.setRoot('HomePage');
+  } 
+
 
 
 }

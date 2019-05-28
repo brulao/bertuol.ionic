@@ -3,9 +3,9 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Cadastro de Motorista</ion-title>
+    <ion-title>Cadastro de Motoristas</ion-title>
     <ion-buttons right>
-      <button ion-button icon-only (click)="addOrEdit({})">
+      <button *ngIf="nomeUsuario.administrador" ion-button icon-only (click)="addOrEdit({})">
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
@@ -13,8 +13,9 @@
 </ion-header>
 
 <ion-content no-padding>
-
-    <ion-list lines>
+    
+  <div *ngIf="nomeUsuario.administrador; else elseBlock">
+  <ion-list lines>
         <ion-item *ngFor="let item of lista" (click)="addOrEdit(item)" text-wrap>
           <ion-label>
             <ion-icon name="person"> </ion-icon>
@@ -22,5 +23,21 @@
           </ion-label>
         </ion-item>
       </ion-list>
+  </div>
+
+  <ng-template #elseBlock>
+
+    <ion-list lines>
+      <ion-item *ngFor="let item of lista" text-wrap>
+        <ion-label>
+          <ion-icon name="person"> </ion-icon>
+          {{ item.nome }} 
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+  </ng-template>
+
+<button ion-button block (click)="home()">Home</button>
 
 </ion-content>

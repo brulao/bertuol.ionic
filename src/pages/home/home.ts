@@ -1,5 +1,5 @@
-import { CaminhaoProvider } from './../../providers/caminhao/caminhao';
-import { MotoristaProvider } from './../../providers/motorista/motorista';
+// import { CaminhaoProvider } from './../../providers/caminhao/caminhao';
+// import { MotoristaProvider } from './../../providers/motorista/motorista';
 import { ViagemProvider } from './../../providers/viagem/viagem';
 import { UsuarioProvider } from './../../providers/usuario/usuario';
 import { Component } from '@angular/core';
@@ -21,12 +21,13 @@ export class HomePage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private viagemSrv: ViagemProvider,
-    private motoristaSrv: MotoristaProvider,
-    private caminhaoSrv: CaminhaoProvider
+    // private motoristaSrv: MotoristaProvider,
+    // private caminhaoSrv: CaminhaoProvider
   ) {
     if (UsuarioProvider.IsLogado) {
       this._loadData();
       console.log(this.nomeUsuario.nome);
+      console.log(this.nomeUsuario.administrador);
     } else {
       this.nomeUsuario = 'Faça o login';
       this.navCtrl.setRoot('LoginPage');
@@ -36,20 +37,20 @@ export class HomePage {
   // Carregar dados
   private async _loadData(): Promise<void> {
     let totalViagem = await this.viagemSrv.contador();
-    let totalMotorista = await this.motoristaSrv.contador();
-    let totalCaminhao = await this.caminhaoSrv.contador();
+    // let totalMotorista = await this.motoristaSrv.contador();
+    // let totalCaminhao = await this.caminhaoSrv.contador();
     if (totalViagem.success) {
       this.numeroViagens = JSON.stringify(totalViagem.data.total)
       console.log("Número de viagens: " +  this.numeroViagens);
     }
-    if (totalMotorista.success) {
-      this.numeroMotorista = JSON.stringify(totalMotorista.data.total)
-      console.log("Número de motoristas: " +  this.numeroMotorista);
-    }
-    if (totalCaminhao.success) {
-      this.numeroCaminhoes = JSON.stringify(totalCaminhao.data.total)
-      console.log("Número de caminhões: " +  this.numeroCaminhoes);
-    } 
+    // if (totalMotorista.success) {
+    //   this.numeroMotorista = JSON.stringify(totalMotorista.data.total)
+    //   console.log("Número de motoristas: " +  this.numeroMotorista);
+    // }
+    // if (totalCaminhao.success) {
+    //   this.numeroCaminhoes = JSON.stringify(totalCaminhao.data.total)
+    //   console.log("Número de caminhões: " +  this.numeroCaminhoes);
+    // } 
   }
 
 

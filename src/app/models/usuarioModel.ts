@@ -3,4 +3,6 @@ export class UsuarioModel {
     email: string;
     senha: string;
     senhaConfirmacao: string;
+    ativo: boolean;
+    administrador: boolean
 }

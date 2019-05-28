@@ -19,17 +19,6 @@
 
   <ion-list>
 
-    <!-- Nome do motorista -->
-    <ion-item>
-      <ion-label floating>Nome do motorista:</ion-label>
-      <ion-select [(ngModel)]="viagem.motorista" multiple="true">
-        <ion-option *ngFor="let usuario of listaM">
-          {{ usuario.nome }}
-        </ion-option>
-      </ion-select>
-      <!-- <ion-input disabled="false" type="text" [(ngModel)]="viagem.motorista"></ion-input> -->
-    </ion-item>
-
     <!-- Data da viagem -->
     <ion-item>
       <ion-label floating>Data da viagem:</ion-label>
@@ -39,10 +28,20 @@
 
     <!-- Modelo do caminhão -->
     <ion-item>
-      <ion-label floating>Modelo do caminhão:</ion-label>
-      <ion-select [(ngModel)]="viagem.caminhao" multiple="true">
+      <ion-label floating>Placa do caminhão:</ion-label>
+      <ion-select [(ngModel)]="viagem.caminhao" multiple="false" cancelText="Cancel" okText="Ok">
         <ion-option *ngFor="let caminhao of listaC">
-          {{ caminhao.modeloCaminhao }}
+          {{ caminhao.placa }}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Nome do motorista -->
+    <ion-item>
+      <ion-label floating>Nome do motorista:</ion-label>
+      <ion-select [(ngModel)]="viagem.motorista" multiple="false" cancelText="Cancel" okText="Ok">
+        <ion-option *ngFor="let usuario of listaM">
+          {{ usuario.nome }}
         </ion-option>
       </ion-select>
     </ion-item>
@@ -75,9 +74,9 @@
     <ion-item>
       <ion-label floating>Peso da carga (kg):</ion-label>
       <ion-input type="number" [(ngModel)]="viagem.pesoCarga"></ion-input>
-      <ion-range min="1000" max="50000" step="1" [(ngModel)]="viagem.pesoCarga" color="secondary">
-        <ion-label range-left>1000</ion-label>
-        <ion-label range-right>50000</ion-label>
+      <ion-range min="10000" max="80000" step="1" [(ngModel)]="viagem.pesoCarga" color="secondary">
+        <ion-label range-left>20000</ion-label>
+        <ion-label range-right>80000</ion-label>
       </ion-range>
     </ion-item>
 
@@ -97,9 +96,9 @@
     <ion-item>
       <ion-label floating>Litros de diesel consumidos:</ion-label>
       <ion-input type="text" [(ngModel)]="viagem.quantidadeLitros"></ion-input>
-      <ion-range min="50" max="500" step="0.1" [(ngModel)]="viagem.quantidadeLitros" color="secondary">
+      <ion-range min="50" max="600" step="0.1" [(ngModel)]="viagem.quantidadeLitros" color="secondary">
         <ion-label range-left>50</ion-label>
-        <ion-label range-right>500</ion-label>
+        <ion-label range-right>600</ion-label>
       </ion-range>
     </ion-item>
 

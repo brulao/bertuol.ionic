@@ -11,7 +11,7 @@ import { UsuarioProvider } from '../../providers/usuario/usuario';
 })
 
 export class MotoristaPage {
-
+  nomeUsuario: '';
   lista: Array<MotoristaModel> = new Array<MotoristaModel>();
 
   constructor(
@@ -19,6 +19,8 @@ export class MotoristaPage {
     public navParams: NavParams,
     private motoristaSrv: MotoristaProvider
   ) {
+    this.nomeUsuario = JSON.parse(localStorage.getItem('bertuol.user'));
+
     let token = UsuarioProvider.GetTokenAccess;
     if (token) {
       this._loadData();
@@ -36,6 +38,10 @@ export class MotoristaPage {
 
   addOrEdit(model?: MotoristaModel): void {
     this.navCtrl.push('CadastroMotoristaPage', { _motorista: model });
+  }
+
+  home(): void {
+    this.navCtrl.setRoot('HomePage');
   }
 
 }
